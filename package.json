@@ -1,11 +1,11 @@
 {
-  "name": "Project",
+  "name": "omertex-bc",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
   "scripts": {
     "build": "gulp build",
-    "start": "gulp watch"
+    "start": "gulp build & gulp watch"
   },
   "author": "Omertex",
   "license": "ISC",
@@ -16,6 +16,7 @@
     "gulp-autoprefixer": "^3.1.1",
     "gulp-concat": "^2.6.1",
     "gulp-cssnano": "^2.1.2",
+    "gulp-data": "^1.2.1",
     "gulp-group-css-media-queries": "^1.2.0",
     "gulp-htmlhint": "^0.3.1",
     "gulp-iconfont": "^8.0.1",
@@ -26,9 +27,5 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^3.1.0",
     "gulp-uglify": "^2.0.0"
-  },
-  "dependencies": {
-    "jquery": "^3.1.1",
-    "jquery.nicescroll": "^3.7.6"
   }
 }

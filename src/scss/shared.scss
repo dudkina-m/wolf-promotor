@@ -1,0 +1,47 @@
+@import 'global';
+
+body {
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  font-family: 'Open Sans', sans-serif;
+  font-weight: 400;
+  min-height: 100vh;
+  width: 100%;
+}
+
+.content {
+  flex-grow: 1;
+  width: 100%;
+}
+
+.container {
+  margin: 0 auto;
+  max-width: 95% !important;
+  width: 100%;
+  @media screen and (min-width: 1600px) {
+    max-width: 80% !important;
+  }
+}
+
+.grid {
+  display: flex;
+  flex-wrap: wrap;
+  margin: 30px -15px 0;
+
+  &__item {
+    padding: 0 15px 30px 15px;
+    width: 50%;
+
+    &_4 {
+      padding: 0 15px 30px 15px;
+      width: 25%;
+    }
+  }
+}
+
+.content {
+  &__flex-start {
+    justify-content: flex-start;
+  }
+}

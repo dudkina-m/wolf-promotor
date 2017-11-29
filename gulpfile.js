@@ -1,26 +1,24 @@
 const gulp = require('gulp'),
-      $ = require('gulp-load-plugins')(),
-      browserSync = require('browser-sync').create(),
+    $ = require('gulp-load-plugins')(),
+    browserSync = require('browser-sync').create(),
 
-      cssConfig = require('./config/csscomb.json'),
-      htmlConfig = require('./config/htmlhint.json'),
-      beautifierConfigPath = './config/beautifier.json',
-      plugins = require('./config/plugins.json'),
+    cssConfig = require('./config/csscomb.json'),
+    htmlConfig = require('./config/htmlhint.json'),
+    beautifierConfigPath = './config/beautifier.json',
+    plugins = require('./config/plugins.json'),
 
-      csscomb = require('csscomb')(cssConfig),
+    csscomb = require('csscomb')(cssConfig),
 
-      sourceDirectory = 'src/',
-      buildDirectory = 'dist/',
-      nodeModulesDirectory = 'node_modules/';
+    sourceDirectory = 'src/',
+    buildDirectory = 'dist/',
+    nodeModulesDirectory = 'node_modules/';
 
 
 const getPluginsPaths = (type) => {
     const pluginNames = Object.keys(plugins[type]);
-
     if (!pluginNames.length) return [];
-
     return pluginNames.map(key => nodeModulesDirectory + plugins[type][key]);
-}
+};
 
 
 gulp.task('build-jade', () => {
@@ -31,16 +29,19 @@ gulp.task('build-jade', () => {
 });
 
 gulp.task('build-css', () => {
-    gulp.src([`${sourceDirectory}css/reset.css`]
-              .concat(getPluginsPaths('css')))
-        .pipe($.plumber())
-        .pipe($.concat('components.css'))
-        .pipe($.cssnano())
-        .pipe(gulp.dest(`${buildDirectory}css`));
+    gulp.src([
+        `${sourceDirectory}css/reset.css`,
+        // `${nodeModulesDirectory}bootstrap/dist/css/bootstrap.min.css`,
+    ]
+    .concat(getPluginsPaths('css')))
+    .pipe($.plumber())
+    .pipe($.concat('components.css'))
+    .pipe($.cssnano())
+    .pipe(gulp.dest(`${buildDirectory}css`));
 
     return gulp.src([`${sourceDirectory}scss/*.scss`,
-                     `${sourceDirectory}scss/icons/*.scss`,
-                     `${sourceDirectory}scss/components/**/*.scss`])
+        `${sourceDirectory}scss/icons/*.scss`,
+        `${sourceDirectory}scss/components/**/*.scss`])
         .pipe($.plumber())
         .pipe($.sass())
         .pipe($.autoprefixer({
@@ -53,10 +54,11 @@ gulp.task('build-css', () => {
 
 gulp.task('build-js', () => {
     return gulp.src([`${sourceDirectory}js/*.js`,
-                     `${sourceDirectory}js/helpers/*.js`,
-                     `${sourceDirectory}js/components/general/*.js`,
-                     `${sourceDirectory}js/components/*.js`,
-                     `${nodeModulesDirectory}jquery.nicescroll/dist/jquery.nicescroll.js`])
+        `${sourceDirectory}js/helpers/*.js`,
+        `${sourceDirectory}js/components/general/*.js`,
+        `${sourceDirectory}js/components/*.js`,
+        // `${nodeModulesDirectory}easy-autocomplete/dist/jquery.easy-autocomplete.min.js`
+    ])
         .pipe($.plumber())
         .pipe($.concat('script.js'))
         .pipe(gulp.dest(`${buildDirectory}js`));
@@ -72,13 +74,13 @@ gulp.task('build-plugins-js', () => {
 
 gulp.task('copy-img', () => {
     return gulp.src([`${sourceDirectory}img/*.{jpg,jpeg,png,svg,gif,ico}`]
-                     .concat(getPluginsPaths('img')))
+        .concat(getPluginsPaths('img')))
         .pipe(gulp.dest(`${buildDirectory}img`));
 });
 
 gulp.task('copy-fonts', () => {
     return gulp.src([`${sourceDirectory}font/*.{ttf,eot,woff,woff2,svg}`]
-                     .concat(getPluginsPaths('font')))
+        .concat(getPluginsPaths('font')))
         .pipe(gulp.dest(`${buildDirectory}font`));
 });
 
@@ -121,19 +123,18 @@ gulp.task('prettify', gulp.series(
 
     function beautify() {
         return gulp.src([`${buildDirectory}*.html`,
-                         `${buildDirectory}js/script.js`])
+            `${buildDirectory}js/script.js`])
             .pipe($.jsbeautifier({
                 config: beautifierConfigPath,
                 mode: 'VERIFY_AND_WRITE'
             }))
             .pipe($.rename(path => {
                 path.dirname = (path.extname === '.js') ? `${path.dirname}/js` : path.dirname;
-                path.dirname = (path.extname === '.css') ? `${path.dirname}/css` : path.dirname;
-            }))
-            .pipe(gulp.dest(buildDirectory));
+        path.dirname = (path.extname === '.css') ? `${path.dirname}/css` : path.dirname;
+    }))
+    .pipe(gulp.dest(buildDirectory));
     }
-    )
-);
+));
 
 gulp.task('check-code', () => {
     return gulp.src(`${buildDirectory}*.html`)
@@ -143,6 +144,7 @@ gulp.task('check-code', () => {
 
 gulp.task('watch', () => {
     browserSync.init({
+        port: process.env.PORT || 3000,
         server: {
             baseDir: buildDirectory
         }
@@ -156,7 +158,6 @@ gulp.task('watch', () => {
     gulp.watch(`${buildDirectory}*.html`).on('change', browserSync.reload);
     gulp.watch(`${buildDirectory}css/*.css`).on('change', browserSync.reload);
     gulp.watch(`${buildDirectory}js/*.js`).on('change', browserSync.reload);
-
 });
 
 gulp.task('build', gulp.series(
@@ -165,6 +166,5 @@ gulp.task('build', gulp.series(
     gulp.parallel('prettify'),
     gulp.parallel('check-code')
 ));
-
 
 gulp.task('default', gulp.parallel('build'));

@@ -1,0 +1,8 @@
+$font_icons: 'icons';
+@mixin transition($props...) {
+  @if (length($props) > 0) {
+    transition: $props;
+  } @else {
+    transition: all .3s ease;
+  }
+}
