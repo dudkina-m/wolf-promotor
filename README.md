@@ -1,16 +1,8 @@
 <h1>HTML/CSS Development</h1>
-<ul>
-    <li><a href="#gulp-cli">Установка gulp-cli</a></li>
-    <li><a href="#dependencies">Подключение зависимостей и сборка</a></li>
-    <li><a href="#plugins">Подключение плагинов в gulpfile</a></li>
-    <li><a href="#plugins-cdn">Подключение плагинов через cdn</a></li>
-    <li><a href="#icon-font">Использование собственных иконочных шрифтов</a></li>
-    <li><a href="#recommend">Рекомендации по разработке</a></li>
-</ul>
 
 <h4 id="gulp-cli">Установка gulp-cli</h4>
 `npm install gulp-cli -g`<br>
-_Устанавливается в первый раз глобально!_
+_Устанавливается только один раз глобально!_
 
 <h4 id="dependencies">Подключение зависимостей и сборка</h4>
 Установка node-модулей<br>

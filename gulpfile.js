@@ -21,10 +21,10 @@ const getPluginsPaths = (type) => {
 };
 
 
-gulp.task('build-jade', () => {
-    return gulp.src(`${sourceDirectory}jade/*.jade`)
+gulp.task('build-pug', () => {
+    return gulp.src(`${sourceDirectory}pug/*.pug`)
         .pipe($.plumber())
-        .pipe($.jade({ pretty: true }))
+        .pipe($.pug({ pretty: true }))
         .pipe(gulp.dest(buildDirectory));
 });
 
@@ -149,7 +149,7 @@ gulp.task('watch', () => {
             baseDir: buildDirectory
         }
     });
-    gulp.watch(`${sourceDirectory}jade/**/*.jade`, gulp.parallel('build-jade'));
+    gulp.watch(`${sourceDirectory}pug/**/*.pug`, gulp.parallel('build-pug'));
     gulp.watch(`${sourceDirectory}scss/**/*.scss`, gulp.parallel('build-css'));
     gulp.watch(`${sourceDirectory}js/**/*.js`, gulp.parallel('build-js'));
     gulp.watch(`${sourceDirectory}img/*.*`, gulp.parallel('copy-img'));
@@ -161,7 +161,7 @@ gulp.task('watch', () => {
 });
 
 gulp.task('build', gulp.series(
-    gulp.parallel('build-jade', 'copy-fonts', 'build-plugins-js', 'build-js', 'build-js', 'copy-img'),
+    gulp.parallel('build-pug', 'copy-fonts', 'build-plugins-js', 'build-js', 'build-js', 'copy-img'),
     gulp.series('icon-font', 'build-css'),
     gulp.parallel('prettify'),
     gulp.parallel('check-code')
