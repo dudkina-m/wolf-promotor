@@ -1,5 +1,5 @@
 {
-  "name": "project-name",
+  "name": "wolf-promotor",
   "version": "1.0.0",
   "description": "",
   "main": "gulpfile.js",
@@ -7,7 +7,7 @@
     "build": "gulp build",
     "start": "gulp build & gulp watch"
   },
-  "author": "Omertex",
+  "author": "dudkina.m.94@gmail.com",
   "license": "ISC",
   "devDependencies": {
     "browser-sync": "^2.18.13",
