@@ -2,43 +2,65 @@
 
 body {
   background: #fff;
+  color: #313131;
   display: flex;
   flex-direction: column;
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Roboto', sans-serif;
   font-weight: 400;
   min-height: 100vh;
   width: 100%;
 }
 
-.content {
+.container {
   flex-grow: 1;
   width: 100%;
 }
 
-.container {
+.content {
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1170px;
+  padding: 0 15px;
   width: 100%;
 }
 
-.grid {
-  display: flex;
-  flex-wrap: wrap;
-  margin: 30px -15px 0;
+.d {
+  &__flex {
+    display: flex !important;
+  }
 
-  &__item {
-    padding: 0 15px 30px 15px;
-    width: 50%;
+  &__block {
+    display: block !important;
+  }
+}
 
-    &_4 {
-      padding: 0 15px 30px 15px;
-      width: 25%;
+.justify-content {
+  &_between {
+    justify-content: space-between !important;
+  }
+}
+
+.align-items {
+  &_center {
+    align-items: center !important;
+  }
+}
+
+.text {
+  &__align {
+    &_center {
+      text-align: center !important;
+    }
+
+    &_right {
+      text-align: right !important;
     }
   }
 }
 
-.content {
-  &__flex-start {
-    justify-content: flex-start;
-  }
-}
+#map {
+  height: 430px;
+}
+
+.fancybox-container {
+  z-index: 10000 !important;
+}

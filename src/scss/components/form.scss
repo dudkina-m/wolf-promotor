@@ -1,0 +1,23 @@
+.form {
+  &__title {
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 10px;
+    text-align: center;
+    text-transform: uppercase;
+  }
+
+  &__desc {
+    color: #585858;
+    margin-bottom: 50px;
+    text-align: center;
+  }
+
+  &__item {
+    margin-top: 10px;
+  }
+
+  &__checkbox {
+    margin: 30px 0;
+  }
+}

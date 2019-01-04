@@ -1,0 +1,45 @@
+header.header
+    .content.d__flex.justify-content_between.align-items_center
+        a.header__logo(href="/")
+            img(src="img/logo.svg" alt="logo")
+        nav.header__nav
+            ul
+                li
+                    a.header__link.header__link_hasSubmenu услуги
+                    ul.submenu.submenu__nav
+                        li
+                            a.submenu__item(href="#rent") Аренда
+                        li
+                            a.submenu__item(href="#owners") Собственникам
+                        li
+                            a.submenu__item(href="#services") Финансовые услуги
+                        li
+                            a.submenu__item(href="#services") Юридические услуги
+                li
+                    a.header__link(href="#investors") инвесторам
+                li
+                    a.header__link(href="#villas") каталог
+                li
+                    a.header__link(href="#about") о нас
+                li
+                    a.header__link(href="#contacts") контакты
+        .header__contacts
+            ul
+                li.footer__phone
+                    a(href="viber://add?number=+34653204644") + (34) 653-204-644
+                    a.socials__viber(href="viber://add?number=+34653204644")
+                        img(src="img/29_viber.svg" alt)
+                li.footer__phone
+                    a(href="#") + (34) 609-229-272
+                    a.socials__telegram(href="#")
+                        img(src="img/31_telegram.svg" alt)
+                    a.socials__whatsapp(href="whatsapp://send?phone=+34609229272")
+                        img(src="img/30_whatsUp.svg" alt)
+
+        .lang-dropdown RU
+            ul.submenu
+                li
+                    a.submenu__item(href="#") EN
+                li
+                    a.submenu__item(href="#") RU
+        button.mobile-menu

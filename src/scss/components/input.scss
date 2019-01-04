@@ -1,0 +1,26 @@
+@import '../global';
+
+.input {
+  background-color: #fff;
+  border: 0;
+  height: 56px;
+  padding: 0 20px;
+  width: 100%;
+
+  &::-webkit-input-placeholder {
+    /* Chrome/Opera/Safari */
+    color: rgba(49, 49, 49, .5);
+  }
+  &::-moz-placeholder {
+    /* Firefox 19+ */
+    color: rgba(49, 49, 49, .5);
+  }
+  &:-ms-input-placeholder {
+    /* IE 10+ */
+    color: rgba(49, 49, 49, .5);
+  }
+  &:-moz-placeholder {
+    /* Firefox 18- */
+    color: rgba(49, 49, 49, .5);
+  }
+}

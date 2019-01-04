@@ -1,0 +1,43 @@
+@import '../global';
+
+.tab {
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 700;
+  opacity: .5;
+  padding: 20px 30px;
+  text-transform: uppercase;
+  @media screen and (max-width: 767px) {
+    width: 100%;
+  }
+
+  &.active {
+    background-color: #f0fcfc;
+    opacity: 1;
+  }
+
+  &__content {
+    background-color: #f0fcfc;
+    height: auto;
+    padding: 90px 0;
+
+    &.hidden {
+      display: block;
+      height: 0;
+      overflow: hidden;
+      padding: 0;
+    }
+  }
+
+  &__list {
+    display: flex;
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  &__wrapper {
+    margin-top: 60px;
+  }
+}

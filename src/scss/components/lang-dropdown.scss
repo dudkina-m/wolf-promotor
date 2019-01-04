@@ -1,0 +1,21 @@
+.lang-dropdown {
+  align-items: center;
+  color: #fff;
+  cursor: pointer;
+  display: flex;
+  height: 80px;
+  justify-content: center;
+  padding: 0 10px;
+  position: relative;
+  text-decoration: underline;
+
+  &:hover {
+    & > .submenu {
+      display: block;
+
+      @media screen and (max-width: 767px) {
+        display: none;
+      }
+    }
+  }
+}

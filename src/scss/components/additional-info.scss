@@ -1,0 +1,23 @@
+.additional-info {
+  padding-left: 30px;
+  width: 42%;
+
+  @media screen and (max-width: 767px) {
+    padding-left: 0;
+    width: 100%;
+  }
+
+  p {
+    font-size: 16px;
+    margin-top: 40px;
+  }
+
+  .btn {
+    margin-top: 60px;
+    max-width: 245px;
+
+    @media screen and (max-width: 767px) {
+      max-width: 100%;
+    }
+  }
+}

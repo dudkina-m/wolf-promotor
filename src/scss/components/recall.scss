@@ -1,0 +1,23 @@
+.recall {
+  &__content {
+    padding: 0 !important;
+  }
+
+  &__img {
+    width: 100%;
+
+    img {
+      width: 100%;
+    }
+  }
+
+  &__wrap {
+    padding: 30px;
+    text-align: center;
+  }
+
+  &__btn {
+    margin: 40px auto 0;
+    max-width: 245px;
+  }
+}

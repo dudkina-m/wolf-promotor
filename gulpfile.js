@@ -31,7 +31,8 @@ gulp.task('build-pug', () => {
 gulp.task('build-css', () => {
     gulp.src([
         `${sourceDirectory}css/reset.css`,
-        // `${nodeModulesDirectory}bootstrap/dist/css/bootstrap.min.css`,
+        `${nodeModulesDirectory}slick-carousel/slick/slick.css`,
+        `${nodeModulesDirectory}@fancyapps/fancybox/dist/jquery.fancybox.min.css`,
     ]
     .concat(getPluginsPaths('css')))
     .pipe($.plumber())
@@ -57,7 +58,8 @@ gulp.task('build-js', () => {
         `${sourceDirectory}js/helpers/*.js`,
         `${sourceDirectory}js/components/general/*.js`,
         `${sourceDirectory}js/components/*.js`,
-        // `${nodeModulesDirectory}easy-autocomplete/dist/jquery.easy-autocomplete.min.js`
+        `${nodeModulesDirectory}slick-carousel/slick/slick.min.js`,
+        `${nodeModulesDirectory}@fancyapps/fancybox/dist/jquery.fancybox.min.js`,
     ])
         .pipe($.plumber())
         .pipe($.concat('script.js'))

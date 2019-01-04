@@ -1,0 +1,29 @@
+.submenu {
+  background-color: #fff;
+  display: none;
+  position: absolute;
+  top: 100%;
+
+  &__nav {
+    @media screen and (max-width: 767px) {
+      position: static;
+      text-align: center;
+      width: 100%;
+    }
+  }
+
+
+  &__item {
+    align-items: center;
+    color: #585858;
+    display: flex;
+    justify-content: center;
+    padding: 5px 15px;
+    white-space: nowrap;
+
+    &:hover {
+      background-color: #f0fcfc;
+      color: #313131;
+    }
+  }
+}

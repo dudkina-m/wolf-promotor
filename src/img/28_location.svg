@@ -1,0 +1,9 @@
+<svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 40 55" width="40" height="55">
+    <defs>
+        <style>.cls-1{fill:#36adb6;}</style>
+    </defs>
+    <title>28_location</title>
+    <path class="cls-1"
+          d="M32,4.5A20,20,0,0,0,12,24.42C12,38.05,29.9,58.06,30.66,58.9a1.8,1.8,0,0,0,2.68,0C34.1,58.06,52,38.05,52,24.42A20,20,0,0,0,32,4.5Zm0,29.94a10,10,0,1,1,10.06-10A10,10,0,0,1,32,34.44Z"
+          transform="translate(-12 -4.5)"/>
+</svg>

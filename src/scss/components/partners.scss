@@ -1,0 +1,46 @@
+.partners {
+  background-color: #00c8cd;
+
+  .slick-list,
+  .slick-track {
+    height: 100%;
+  }
+
+  &__slider {
+    align-items: center;
+    display: flex !important;
+    height: 185px;
+  }
+
+  &__item {
+    align-items: center;
+    display: flex !important;
+    height: 100%;
+    justify-content: center;
+  }
+
+  .slick {
+    &-arrow {
+      background-color: transparent;
+      background-position: center;
+      background-repeat: no-repeat;
+      border: 0;
+      font-size: 0;
+      height: 30px;
+      position: absolute;
+      top: calc(50% - 15px);
+      width: 30px;
+      z-index: 99;
+
+      &.slick-prev {
+        background-image: url('../img/1_leftArrow.svg');
+        left: -15px;
+      }
+
+      &.slick-next {
+        background-image: url('../img/2_rightArrow.svg');
+        right: -15px;
+      }
+    }
+  }
+}

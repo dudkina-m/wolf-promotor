@@ -1,0 +1,63 @@
+@import '../global';
+
+.footer {
+  &__container {
+    display: flex;
+    margin: 60px -15px 40px;
+    width: 100%;
+
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+      margin-top: 30px;
+    }
+  }
+
+  &__item {
+    color: #575757;
+    padding: 0 15px;
+    width: 25%;
+
+    @media screen and (max-width: 767px) {
+      margin-top: 30px;
+      width: 100%;
+    }
+  }
+
+  &__title {
+    color: #313131;
+    font-size: 18px;
+    font-weight: 700;
+    margin-bottom: 15px;
+
+    &:not(:first-child) {
+      margin-top: 30px;
+    }
+  }
+
+  &__link {
+    @include transition();
+
+    display: block;
+    margin: 5px 0;
+    text-decoration: underline;
+  }
+
+  &__copyright {
+    border-top: 1px solid rgba(0, 0, 0, .1);
+
+    a,
+    span {
+      color: rgba(49, 49, 49, .5);
+      font-size: 12px;
+      margin-right: 15px;
+      padding: 15px 0;
+    }
+  }
+
+  &__phone {
+    margin: 10px 0;
+    & > * {
+      margin-right: 20px;
+    }
+  }
+}

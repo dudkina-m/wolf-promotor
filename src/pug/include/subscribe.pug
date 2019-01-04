@@ -1,0 +1,19 @@
+section.section.section-img(style="background-image: url('img/subscribe-bg.png')")
+    .content
+        .section__title
+            | Хотите увидеть все наши предложения? #[br]
+            | Оставьте свои данные и мы свяжемся с Вами!
+        p.subscribe__desc Заполните форму, чтобы получить консультацию по интересующему Вас вопросу
+        .subscribe__form
+            .subscribe__form-item
+                input.input(type="text" placeholder="Ваше имя")
+            .subscribe__form-item
+                input.input(type="tel" placeholder="Номер телефона")
+            .subscribe__form-item
+                input.input(type="email" placeholder="E-mail")
+            .subscribe__form-item
+                a.btn(href="#" data-modal="recall") Получить предложения
+        .subscribe__checkbox
+            .checkbox
+                input#privacy-policy(type="checkbox" checked="checked")
+                label.checkbox__label(for="privacy-policy") Я согласен с #[a(href="#" data-modal="privacy") политикой конфиденциальности]

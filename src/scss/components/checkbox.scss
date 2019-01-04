@@ -1,0 +1,36 @@
+.checkbox {
+  input[type='checkbox'] {
+    display: none;
+
+    &:checked + label:after {
+      content: url('../img/10_checkMark.svg');
+      height: 15px;
+      left: 2px;
+      position: absolute;
+      top: -1px;
+      width: 15px;
+    }
+  }
+
+  &__label {
+    color: #585858;
+    cursor: pointer;
+    font-style: italic;
+    line-height: 18px;
+    padding-left: 33px;
+    position: relative;
+
+    &:before {
+      background-color: #f4f4f4;
+      content: '';
+      height: 18px;
+      left: 0;
+      position: absolute;
+      width: 18px;
+    }
+
+    a {
+      text-decoration: underline;
+    }
+  }
+}

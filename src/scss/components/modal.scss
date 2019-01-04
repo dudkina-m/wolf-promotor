@@ -1,0 +1,80 @@
+@import '../global';
+
+.modal {
+  background-color: #fff;
+  display: none;
+  left: 50%;
+  max-width: 750px;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  z-index: 10000;
+
+  @media screen and (max-width: 767px) {
+    margin: 0 auto;
+    top: 10%;
+    transform: translate(-50%, 0);
+    width: 90%;
+  }
+
+  &_small {
+    max-width: 500px;
+  }
+
+  &__container {
+    background-color: rgba(0,0,0,.6);
+    display: none;
+    height: 100vh;
+    left: 0;
+    overflow-y: auto;
+    padding: 30px;
+    position: fixed;
+    top: 0;
+    width: 100vw;
+    z-index: 9999;
+  }
+
+  &__close {
+    @include transition();
+
+    background: url('../img/35_close.svg') center no-repeat;
+    border: 0;
+    height: 15px;
+    position: absolute;
+    right: 5px;
+    top: 5px;
+    width: 15px;
+
+    &:hover {
+      opacity: .6;
+    }
+  }
+
+  &__content {
+    align-items: center;
+    background-position: left center;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+
+    @media screen and (max-width: 767px) {
+      background-image: none !important;
+    }
+  }
+
+  &__form {
+    padding-left: 35px;
+    width: 60%;
+
+    @media screen and (max-width: 767px) {
+      padding-left: 0;
+      width: 100%;
+    }
+
+    .input {
+      background-color: #f4f4f4;
+    }
+  }
+}
