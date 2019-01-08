@@ -9,6 +9,7 @@ $(function () {
   changePhoto();
   toogleContacts();
   toggleMenu();
+  scrollToTag();
 
   if (window.innerWidth < 768) {
     $('.lang-dropdown').click(function () {
@@ -35,9 +36,17 @@ $(function () {
   });
 });
 
+function scrollToTag() {
+  $('.header__link, .submenu__item').each(function () {
+    $(this).click(function () {
+      const id = $(this).attr('href');
+      $('html,body').animate({scrollTop: $(id).offset().top},'slow');
+    });
+  })
+}
+
 function toggleMenu() {
-  $('.mobile-menu').click(function (e) {
-    //e.preventDefault();
+  $('.mobile-menu').click(function () {
     $('.header__nav > ul').toggleClass("open");
   });
   $(document).mouseup(function(e) {
@@ -54,12 +63,13 @@ function changePhoto() {
     $(this).click(function (e) {
       e.preventDefault();
       const src = $(this).attr('data-src');
+      const photo = $(this).parent().parent().parent('.card__thumbnails').siblings('.card__photo').children('a');
       if ($(this).hasClass('card__video')) {
-        $('.card__photo a').attr('href', $(this).attr('data-video'));
+        $(photo).attr('href', $(this).attr('data-video'));
       } else {
-        $('.card__photo a').attr('href', src);
+        $(photo).attr('href', src);
       }
-      $('.card__photo a img').attr('src', src);
+      $(photo.children('img')).attr('src', src);
     })
   });
 }

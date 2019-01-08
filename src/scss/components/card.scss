@@ -182,21 +182,23 @@
   }
 
   &__includes {
-    display: flex;
-    flex-wrap: wrap;
-    width: 100%;
-
-    li {
-      align-items: center;
+    ul {
       display: flex;
-      line-height: 1;
-      padding: 5px 0;
-      width: 50%;
+      flex-wrap: wrap;
+      width: 100%;
+
+      li {
+        align-items: center;
+        display: flex;
+        line-height: 1;
+        padding: 5px 0;
+        width: 50%;
 
 
-      &:before {
-        content: url('../img/marker.svg');
-        margin-right: 5px;
+        &:before {
+          content: url('../img/marker.svg');
+          margin-right: 5px;
+        }
       }
     }
   }
