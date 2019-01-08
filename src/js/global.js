@@ -40,20 +40,20 @@ function scrollToTag() {
   $('.header__link, .submenu__item').each(function () {
     $(this).click(function () {
       const id = $(this).attr('href');
-      $('html,body').animate({scrollTop: $(id).offset().top},'slow');
+      $('html,body').animate({scrollTop: $(id).offset().top}, 'slow');
     });
-  })
+  });
 }
 
 function toggleMenu() {
   $('.mobile-menu').click(function () {
-    $('.header__nav > ul').toggleClass("open");
+    $('.header__nav > ul').toggleClass('open');
   });
-  $(document).mouseup(function(e) {
+  $(document).mouseup(function (e) {
     var $target = $(e.target);
-    if ($target.closest(".header__nav").length == 0 && $target.closest(".mobile-menu").length == 0) {
+    if ($target.closest('.header__nav').length == 0 && $target.closest('.mobile-menu').length == 0) {
       e.stopPropagation();
-      $(".header__nav > ul").removeClass("open");
+      $('.header__nav > ul').removeClass('open');
     }
   });
 }
@@ -70,7 +70,7 @@ function changePhoto() {
         $(photo).attr('href', src);
       }
       $(photo.children('img')).attr('src', src);
-    })
+    });
   });
 }
 
@@ -79,11 +79,11 @@ function toogleContacts() {
     $(this).children('ul').toggle();
   });
 
-  $(document).mouseup(function(e) {
+  $(document).mouseup(function (e) {
     var $target = $(e.target);
-    if ($target.closest(".header__contacts").length == 0 && $target.closest(".header__contacts > ul").length == 0) {
+    if ($target.closest('.header__contacts').length == 0 && $target.closest('.header__contacts > ul').length == 0) {
       e.stopPropagation();
-      $(".header__contacts > ul").hide();
+      $('.header__contacts > ul').hide();
     }
   });
 }
@@ -142,7 +142,6 @@ function mainSliderInit() {
 
 function thumbnailsInit() {
 
-
   $('.card__thumbnails').each(function () {
     $(this).slick({
       slidesToShow: 6,
@@ -172,8 +171,8 @@ function thumbnailsInit() {
 
 function villasTabsLogic() {
   $('#villas .tab').eq(0).addClass('active');
-  $('#villas .tab__content').addClass("hidden");
-  $('#villas .tab__content').eq(0).removeClass("hidden");
+  $('#villas .tab__content').addClass('hidden');
+  $('#villas .tab__content').eq(0).removeClass('hidden');
 
   $('#villas .tab__wrapper').each(function () {
 
@@ -184,16 +183,16 @@ function villasTabsLogic() {
       $('#villas .tab').removeClass('active');
       $(this).addClass('active');
 
-      $('#villas .tab__content').addClass("hidden");
-      $('#villas .tab__content').eq(index).removeClass("hidden");
+      $('#villas .tab__content').addClass('hidden');
+      $('#villas .tab__content').eq(index).removeClass('hidden');
     });
   });
 }
 
 function investorsTabsLogic() {
   $('#investors .tab').eq(0).addClass('active');
-  $('#investors .tab__content').addClass("hidden");
-  $('#investors .tab__content').eq(0).removeClass("hidden");
+  $('#investors .tab__content').addClass('hidden');
+  $('#investors .tab__content').eq(0).removeClass('hidden');
 
   $('#investors .tab__wrapper').each(function () {
 
@@ -204,8 +203,8 @@ function investorsTabsLogic() {
       $('#investors .tab').removeClass('active');
       $(this).addClass('active');
 
-      $('#investors .tab__content').addClass("hidden");
-      $('#investors .tab__content').eq(index).removeClass("hidden");
+      $('#investors .tab__content').addClass('hidden');
+      $('#investors .tab__content').eq(index).removeClass('hidden');
     });
   });
 }
