@@ -10,6 +10,7 @@ $(function () {
   toogleContacts();
   toggleMenu();
   scrollToTag();
+  //addFancyboxAttr();
 
   if (window.innerWidth < 768) {
     $('.lang-dropdown').click(function () {
@@ -30,11 +31,15 @@ $(function () {
       $('.header__nav > ul').removeClass('open');
     });
   }
-
-  $('[data-fancybox="gallery"]').fancybox({
-    zoom: false
-  });
 });
+
+// function addFancyboxAttr() {
+//   $('.card__gallery').each(function (e) {
+//     const name = 'gallery' + e;
+//     $(this).children('.card__photo').children('a').attr('data-fancybox', name);
+//     $(this).children('.card__thumbnails').children().children().children('.card__small:not(:first-child)').children('img').attr('data-fancybox', name);
+//   })
+// }
 
 function scrollToTag() {
   $('.header__link, .submenu__item').each(function () {

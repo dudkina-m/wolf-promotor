@@ -1,0 +1,84 @@
+@import '../global';
+
+.plot {
+  &__caption {
+    @include transition();
+
+    background: linear-gradient(to top, rgba(0,0,0,.7) 0%,rgba(0,0,0,0) 100%);
+    bottom: 0;
+    color: #fff;
+    font-size: 18px;
+    left: 0;
+    line-height: 26px;
+    padding: 15px 30px;
+    position: absolute;
+    width: 100%;
+  }
+
+  &__container {
+    @include transition();
+
+    cursor: pointer;
+    display: block;
+    position: relative;
+
+    img {
+      height: 250px;
+      max-width: 100%;
+
+      object-fit: cover;
+    }
+
+    &:hover {
+      .plot__caption {
+        padding-bottom: 100px;
+      }
+    }
+  }
+
+  &__modal {
+    flex-direction: row;
+    @media screen and (max-width: 767px) {
+      flex-direction: column;
+    }
+  }
+
+  &__img {
+    width: 50%;
+
+    @media screen and (max-width: 767px) {
+      width: 100%;
+    }
+
+    img {
+      height: 300px;
+      width: 100%;
+
+      object-fit: cover;
+    }
+  }
+
+  &__desc {
+    margin-left: 30px;
+    width: 50%;
+
+    @media screen and (max-width: 767px) {
+      margin-left: 0;
+      margin-top: 30px;
+      width: 100%;
+    }
+
+    .card__address {
+      margin-top: 15px;
+    }
+
+    .card__price {
+      margin-top: 15px;
+    }
+
+    p {
+      line-height: 26px;
+      margin-top: 30px;
+    }
+  }
+}

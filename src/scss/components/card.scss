@@ -24,26 +24,29 @@
 
   &__photo {
     margin-right: 30px;
-    position: relative;
-    text-align: center;
     width: 85%;
 
-    //@media screen and (max-width: 1197px) {
-    //  width: 75%;
-    //}
-
-    &:after {
-      bottom: 15px;
-      content: url('../img/7_size.svg');
-      position: absolute;
-      right: 15px;
-      width: 30px;
-    }
-    img {
-      height: 500px;
+    a {
+      display: block;
+      height: 100%;
+      position: relative;
+      text-align: center;
       width: 100%;
 
-      object-fit: contain;
+      &:after {
+        bottom: 15px;
+        content: url('../img/7_size.svg');
+        position: absolute;
+        right: 15px;
+        width: 30px;
+      }
+    }
+
+    img {
+      height: 500px;
+      max-width: 100%;
+
+      //object-fit: contain;
 
       @media screen and (max-width: 1023px) {
         height: 300px;
@@ -62,6 +65,7 @@
     .card__small {
       @include transition();
 
+      border: 0!important;
       cursor: pointer;
       position: relative;
 
@@ -92,6 +96,7 @@
       }
 
       img {
+        display: block !important;
         height: 60px;
         width: 100%;
 
@@ -197,7 +202,7 @@
 
         &:before {
           content: url('../img/marker.svg');
-          margin-right: 5px;
+          margin-right: 15px;
         }
       }
     }
